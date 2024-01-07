@@ -55,12 +55,22 @@
 <body>
     <div id="question">Me perdonas Aby?</div>
     <div id="options">
-        <button onclick="forgive()" id="forgiveButton">Sí</button>
+        <button onclick="forgive()" id="forgiveButton" style="pointer-events: none;">Sí</button>
         <button id="no" onclick="moveNo()">No</button>
     </div>
     <div id="thanks-box">
         <div id="kobeni-ascii">
-            <!-- ... ASCII art ... -->
+            ⠄⠄⠄⠄⢠⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⣿⣿⣿⣯⢻⣿⣿⣿⣿⣆⠄⠄⠄
+            ⠄⠄⣼⢀⣿⣿⣿⣿⣏⡏⠄⠹⣿⣿⣿⣿⣿⣿⣿⣿⣧⢻⣿⣿⣿⣿⡆⠄⠄
+            ⠄⠄⡟⣼⣿⣿⣿⣿⣿⠄⠄⠄⠈⠻⣿⣿⣿⣿⣿⣿⣿⠄⢻⣿⣿⣿⣿⠄⠄
+            ⠄⢰⠃⣿⣿⠿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠙⠿⣿⣿⣿⣿⠄⢿⣿⣿⣿⡄⠄
+            ⠄⢸⢠⣿⣿⣧⡙⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠈⠛⢿⣿⣿⡇⠸⣿⡿⣸⡇⠄
+            ⠄⠈⡆⣿⣿⣿⣿⣦⡙⠳⠄⠄⠄⠄⠄⠄⢀⣠⣤⣀⣈⠙⠃⠄⠿⢇⣿⡇⠄
+            ⠄⠄⡇⢿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⣠⣶⣿⣿⣿⣿⣿⣷⣆⡀⣼⣿⡇⠄
+            ⠄⠄⢹⡘⣿⣿⣿⢿⣷⡀⠄⢀⣴⣾⣟⠉⠉⠉⠉⣽⣿⣿⣿⣿⠇⢹⣿⠃⠄
+            ⠄⠄⠄⢷⡘⢿⣿⣎⢻⣷⠰⣿⣿⣿⣿⣦⣀⣀⣴⣿⣿⣿⠟⢫⡾⢸⡟⠄.
+            ⠄⠄⠄⠄⠻⣦⡙⠿⣧⠙⢷⠙⠻⠿⢿⡿⠿⠿⠛⠋⠉⠄⠂⠘⠁⠞⠄⠄
+            ⠄⠄⠄⠄⠄⠈⠙⠑⣠⣤⣴⡖⠄⠿⣋⣉⣉⡁⠄⢾⣦⠄⠄⠄⠄⠄⠄⠄
         </div>
         <p>Gracias Aby :3 ahora no te voy a fallar</p>
     </div>
@@ -76,9 +86,6 @@
             var newPosition = Math.random() * (window.innerWidth - noButton.clientWidth);
             noButton.style.left = newPosition + "px";
         }
-
-        // Desactiva el clic en el botón Sí al inicio
-        document.getElementById("forgiveButton").disabled = true;
     </script>
 </body>
 </html>
