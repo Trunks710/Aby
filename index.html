@@ -17,6 +17,7 @@
         #question {
             font-size: 24px;
             margin-bottom: 20px;
+            color: #333; /* Color de texto predeterminado */
         }
 
         #options {
@@ -75,11 +76,13 @@
              ⢻⠘⠃⠈⠻⢦⠞⠋⠙⠺⠋⠉⠉⠉⢡⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
               ⠳⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠋
         </div>
-        <p style="font-size: 20px;">Gracias Aby :3 ahora no te voy a fallar</p>
+        <p style="font-size: 20px; color: blue;">Ahora no te voy a fallar</p>
     </div>
 
     <script>
         function forgive() {
+            document.getElementById("question").innerHTML = "Gracias :3";
+            document.getElementById("question").style.color = "blue";
             document.getElementById("thanks-box").style.display = "block";
             document.getElementById("options").style.display = "none";
         }
