@@ -89,8 +89,21 @@
             var maxHorizontalPosition = window.innerWidth - noButton.clientWidth - margin;
 
             // Genera posiciones aleatorias con margen en ambas direcciones
-            var newVerticalPosition = Math.random() * maxVerticalPosition + margin;
-            var newHorizontalPosition = Math.random() * maxHorizontalPosition + margin;
+            var newVerticalPosition;
+            var newHorizontalPosition;
+
+            // Agrega variación en la dirección vertical y horizontal
+            if (Math.random() > 0.5) {
+                newVerticalPosition = Math.random() * maxVerticalPosition + margin;
+            } else {
+                newVerticalPosition = Math.random() * (maxVerticalPosition - margin) - margin;
+            }
+
+            if (Math.random() > 0.5) {
+                newHorizontalPosition = Math.random() * maxHorizontalPosition + margin;
+            } else {
+                newHorizontalPosition = Math.random() * (maxHorizontalPosition - margin) - margin;
+            }
 
             noButton.style.top = newVerticalPosition + "px";
             noButton.style.left = newHorizontalPosition + "px";
