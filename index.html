@@ -61,7 +61,7 @@
         <div id="kobeni-ascii">
             ⠄⠄⠄⠄⢠⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⣿⣿⣿⣯⢻⣿⣿⣿⣿⣆⠄⠄⠄
             ⠄⠄⣼⢀⣿⣿⣿⣿⣏⡏⠄⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⢻⣿⣿⣿⣿⡆⠄⠄
-            ⠄⠄⡟⣼⣿⣿⣿⣿⣿⠄⠄⠄⠈⠻⣿⣿⣿⣿⣿⣿⣿⠄⢻⣿⣿⣿⣿⠄⠄
+            ⠄⠄⡟⣼⣿⣿⣿⣿⣿⠄⠄⠄⠈⠻⣿⣿⣿⣿⣿⣿⠄⢻⣿⣿⣿⣿⠄⠄
             ⠄⢰⠃⣿⣿⠿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠙⠿⣿⣿⣿⣿⠄⢿⣿⣿⣿⡄⠄
             ⠄⢸⢠⣿⣿⣧⡙⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠈⠛⢿⣿⣿⡇⠸⣿⡿⣸⡇⠄
             ⠄⠈⡆⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⢀⣠⣤⣀⣈⠙⠃⠄⠿⢇⣿⡇⠄
@@ -82,11 +82,10 @@
 
         function moveNo() {
             var noButton = document.getElementById("no");
-            var newPosition = Math.random() * (window.innerWidth - noButton.clientWidth);
+            var margin = 20; // Ajusta este valor según tus necesidades
 
-            // Ajustar la posición para asegurarse de que esté dentro de los límites
-            newPosition = Math.min(newPosition, window.innerWidth - noButton.clientWidth);
-            newPosition = Math.max(newPosition, 0);
+            // Genera una posición aleatoria con un margen
+            var newPosition = Math.random() * (window.innerWidth - noButton.clientWidth - 2 * margin) + margin;
 
             noButton.style.left = newPosition + "px";
         }
