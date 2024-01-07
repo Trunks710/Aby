@@ -66,7 +66,7 @@
             ⠄⢰⠃⣿⣿⠿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠙⠿⣿⣿⣿⣿⠄⢿⣿⣿⣿⡄⠄
             ⠄⢸⢠⣿⣿⣧⡙⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠈⠛⢿⣿⣿⡇⠸⣿⡿⣸⡇⠄
             ⠄⠈⡆⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⢀⣠⣤⣀⣈⠙⠃⠄⠿⢇⣿⡇⠄
-            ⠄⠄⡇⢿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⣠⣶⣿⣿⣿⣿⣿⣷⣆⡀⣼⣿⡇⠄
+            ⠄⠄⡇⢿⣿⣿⣿⡇⠄⠄⠄⠄⠄⠄⣠⣶⣿⣿⣿⣿⣿⣷⣆⡀⣼⣿⡇⠄
             ⠄⠄⢹⡘⣿⣿⣿⢿⣷⡀⠄⢀⣴⣾⣟⠉⠉⠉⠉⣽⣿⣿⣿⣿⠇⢹⣿⠃⠄
             ⠄⠄⠄⢷⡘⢿⣿⣎⢻⣷⠰⣿⣿⣿⣿⣦⣀⣀⣴⣿⣿⣿⠟⢫⡾⢸⡟⠄.
             ⠄⠄⠄⠄⠻⣦⡙⠿⣧⠙⢷⠙⠻⠿⢿⡿⠿⠿⠛⠋⠉⠄⠂⠘⠁⠞⠄⠄
@@ -88,16 +88,12 @@
             var maxVerticalPosition = window.innerHeight - noButton.clientHeight - margin;
             var maxHorizontalPosition = window.innerWidth - noButton.clientWidth - margin;
 
-            // Genera posiciones iniciales dentro de los límites
-            var initialVerticalPosition = Math.random() * maxVerticalPosition;
-            var initialHorizontalPosition = Math.random() * maxHorizontalPosition;
+            var newVerticalPosition = Math.random() * maxVerticalPosition;
+            var newHorizontalPosition = Math.random() * maxHorizontalPosition;
 
-            noButton.style.top = initialVerticalPosition + "px";
-            noButton.style.left = initialHorizontalPosition + "px";
+            noButton.style.top = Math.min(newVerticalPosition, maxVerticalPosition) + "px";
+            noButton.style.left = Math.min(newHorizontalPosition, maxHorizontalPosition) + "px";
         }
-        
-        // Llama a moveNo() al cargar la página para establecer la posición inicial
-        moveNo();
     </script>
 </body>
 </html>
