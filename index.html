@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holii Abichuelas</title>
+    <title>Holi Abichuelas</title>
     <style>
         body {
             display: flex;
@@ -88,11 +88,12 @@
             var maxVerticalPosition = window.innerHeight - noButton.clientHeight - margin;
             var maxHorizontalPosition = window.innerWidth - noButton.clientWidth - margin;
 
-            var newVerticalPosition = Math.random() * maxVerticalPosition;
-            var newHorizontalPosition = Math.random() * maxHorizontalPosition;
+            // Reduzca el rango de posiciones aleatorias
+            var newVerticalPosition = Math.random() * (maxVerticalPosition / 2) + margin;
+            var newHorizontalPosition = Math.random() * (maxHorizontalPosition / 2) + margin;
 
-            noButton.style.top = Math.min(newVerticalPosition, maxVerticalPosition) + "px";
-            noButton.style.left = Math.min(newHorizontalPosition, maxHorizontalPosition) + "px";
+            noButton.style.top = newVerticalPosition + "px";
+            noButton.style.left = newHorizontalPosition + "px";
         }
     </script>
 </body>
