@@ -29,8 +29,7 @@
             font-size: 18px;
             padding: 10px 20px;
             margin: 5px;
-            cursor: not-allowed; /* Cambia el cursor para indicar que no se puede hacer clic */
-            user-select: none; /* Evita que el texto sea seleccionable */
+            cursor: pointer;
         }
 
         #no {
@@ -55,7 +54,7 @@
 <body>
     <div id="question">Me perdonas Aby?</div>
     <div id="options">
-        <button onclick="forgive()" id="forgiveButton" style="pointer-events: none;">Sí</button>
+        <button onclick="forgive()" id="forgiveButton">Sí</button>
         <button id="no" onclick="moveNo()">No</button>
     </div>
     <div id="thanks-box">
