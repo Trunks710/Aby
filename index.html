@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perdón Aby</title>
+    <title>Holii Abichuelas</title>
     <style>
         body {
             display: flex;
@@ -83,31 +83,21 @@
 
         function moveNo() {
             var noButton = document.getElementById("no");
-            var margin = 100; // Ajusta este valor según tus necesidades
+            var margin = 20; // Ajusta este valor según tus necesidades
 
             var maxVerticalPosition = window.innerHeight - noButton.clientHeight - margin;
             var maxHorizontalPosition = window.innerWidth - noButton.clientWidth - margin;
 
-            // Genera posiciones aleatorias con margen en ambas direcciones
-            var newVerticalPosition;
-            var newHorizontalPosition;
+            // Genera posiciones iniciales dentro de los límites
+            var initialVerticalPosition = Math.random() * maxVerticalPosition;
+            var initialHorizontalPosition = Math.random() * maxHorizontalPosition;
 
-            // Agrega variación en la dirección vertical y horizontal
-            if (Math.random() > 0.5) {
-                newVerticalPosition = Math.random() * maxVerticalPosition + margin;
-            } else {
-                newVerticalPosition = Math.random() * (maxVerticalPosition - margin) - margin;
-            }
-
-            if (Math.random() > 0.5) {
-                newHorizontalPosition = Math.random() * maxHorizontalPosition + margin;
-            } else {
-                newHorizontalPosition = Math.random() * (maxHorizontalPosition - margin) - margin;
-            }
-
-            noButton.style.top = newVerticalPosition + "px";
-            noButton.style.left = newHorizontalPosition + "px";
+            noButton.style.top = initialVerticalPosition + "px";
+            noButton.style.left = initialHorizontalPosition + "px";
         }
+        
+        // Llama a moveNo() al cargar la página para establecer la posición inicial
+        moveNo();
     </script>
 </body>
 </html>
