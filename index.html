@@ -83,6 +83,11 @@
         function moveNo() {
             var noButton = document.getElementById("no");
             var newPosition = Math.random() * (window.innerWidth - noButton.clientWidth);
+
+            // Ajustar la posición para asegurarse de que esté dentro de los límites
+            newPosition = Math.min(newPosition, window.innerWidth - noButton.clientWidth);
+            newPosition = Math.max(newPosition, 0);
+
             noButton.style.left = newPosition + "px";
         }
     </script>
