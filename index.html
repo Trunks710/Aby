@@ -19,32 +19,13 @@
             margin-bottom: 20px;
         }
 
-        #options {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        button {
-            font-size: 18px;
-            padding: 10px 20px;
-            margin: 5px;
-            cursor: pointer;
-        }
-
-        #no {
-            position: relative;
-            top: 0;
-            left: 0;
-        }
-
         #thanks-box {
             display: none;
             margin-top: 20px;
             padding: 40px;
             border: 2px solid #333;
             background-color: #f9f9f9;
-            text-align: left; /* Cambié el texto a la izquierda */
+            text-align: center;
         }
 
         #kobeni-ascii {
@@ -56,10 +37,6 @@
 </head>
 <body>
     <div id="question">Me perdonas Aby?</div>
-    <div id="options">
-        <button onclick="forgive()">Sí</button>
-        <button id="no" onclick="moveNo()" onmouseover="moveNo()">No</button>
-    </div>
     <div id="thanks-box">
         <div id="kobeni-ascii">
             ⠀⠀⠀⠀⠀⣀⣤⡤⠀⠀⠀
@@ -75,29 +52,24 @@
              ⢻⠘⠃⠈⠻⢦⠞⠋⠙⠺⠋⠉⠉⠉⢡⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
               ⠳⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠋
         </div>
-        <p style="font-size: 20px;">Gracias Aby :3 ahora no te voy a fallar</p>
+        <p style="font-size: 20px;" id="thanks-message">Gracias Aby :3 ahora no te voy a fallar</p>
     </div>
 
     <script>
         function forgive() {
-            document.getElementById("thanks-box").style.display = "block";
             document.getElementById("question").style.display = "none";
-            document.getElementById("options").style.display = "none";
+            document.getElementById("thanks-box").style.display = "block";
         }
-
-        function moveNo() {
-            var noButton = document.getElementById("no");
-            var margin = 20;
-
-            var maxVerticalPosition = window.innerHeight - noButton.clientHeight - margin;
-            var maxHorizontalPosition = window.innerWidth - noButton.clientWidth - margin;
-
-            var newVerticalPosition = Math.random() * (maxVerticalPosition / 2) + margin;
-            var newHorizontalPosition = Math.random() * (maxHorizontalPosition / 2) + margin;
-
-            noButton.style.top = newVerticalPosition + "px";
-            noButton.style.left = newHorizontalPosition + "px";
-        }
+    </script>
+    <script>
+        setTimeout(function(){
+            var question = document.getElementById("question");
+            var thanksMessage = document.getElementById("thanks-message");
+            
+            question.innerHTML = "Gracias Aby :3 ahora no te voy a fallar";
+            thanksMessage.innerHTML = ""; // Elimina el contenido de la frase original
+            
+        }, 3000); // Cambiará después de 3 segundos (ajustable según sea necesario)
     </script>
 </body>
 </html>
