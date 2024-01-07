@@ -17,7 +17,6 @@
         #question {
             font-size: 24px;
             margin-bottom: 20px;
-            color: #333; /* Color de texto predeterminado */
         }
 
         #options {
@@ -42,16 +41,14 @@
         #thanks-box {
             display: none;
             margin-top: 20px;
-            padding: 40px; /* Ajusta el tamaño del recuadro */
+            padding: 20px;
             border: 2px solid #333;
             background-color: #f9f9f9;
-            text-align: center; /* Centra el contenido del recuadro */
         }
 
         #kobeni-ascii {
             font-family: monospace;
             white-space: pre;
-            font-size: 24px; /* Ajusta el tamaño de la fuente */
         }
     </style>
 </head>
@@ -76,13 +73,11 @@
              ⢻⠘⠃⠈⠻⢦⠞⠋⠙⠺⠋⠉⠉⠉⢡⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
               ⠳⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠋
         </div>
-        <p style="font-size: 20px; color: blue;">Ahora no te voy a fallar</p>
+        <p>Gracias Aby :3 ahora no te voy a fallar</p>
     </div>
 
     <script>
         function forgive() {
-            document.getElementById("question").innerHTML = "Gracias Aby :3";
-            document.getElementById("question").style.color = "blue";
             document.getElementById("thanks-box").style.display = "block";
             document.getElementById("options").style.display = "none";
         }
