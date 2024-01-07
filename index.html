@@ -1,3 +1,8 @@
+
+Aquí está el código completo con la modificación para asegurarte de que el botón "No" siempre esté dentro del área visible de la pantalla:
+
+html
+Copy code
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -34,6 +39,7 @@
 
         #no {
             position: relative;
+            top: 0;
             left: 0;
         }
 
@@ -84,10 +90,15 @@
             var noButton = document.getElementById("no");
             var margin = 20; // Ajusta este valor según tus necesidades
 
-            // Genera una posición aleatoria con un margen
-            var newPosition = Math.random() * (window.innerWidth - noButton.clientWidth - 2 * margin) + margin;
+            var maxVerticalPosition = window.innerHeight - noButton.clientHeight - margin;
+            var maxHorizontalPosition = window.innerWidth - noButton.clientWidth - margin;
 
-            noButton.style.left = newPosition + "px";
+            // Genera posiciones aleatorias con margen en ambas direcciones
+            var newVerticalPosition = Math.random() * maxVerticalPosition + margin;
+            var newHorizontalPosition = Math.random() * maxHorizontalPosition + margin;
+
+            noButton.style.top = newVerticalPosition + "px";
+            noButton.style.left = newHorizontalPosition + "px";
         }
     </script>
 </body>
