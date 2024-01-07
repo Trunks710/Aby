@@ -55,7 +55,7 @@
     <div id="question">Me perdonas Aby?</div>
     <div id="options">
         <button onclick="forgive()" id="forgiveButton">Sí</button>
-        <button id="no" onclick="moveNo()">No</button>
+        <button id="no" onmouseover="moveNo()" onclick="disableNo()">No</button>
     </div>
     <div id="thanks-box">
         <div id="kobeni-ascii">
@@ -84,6 +84,10 @@
             var noButton = document.getElementById("no");
             var newPosition = Math.random() * (window.innerWidth - noButton.clientWidth);
             noButton.style.left = newPosition + "px";
+        }
+
+        function disableNo() {
+            document.getElementById("no").style.pointerEvents = "none";
         }
     </script>
 </body>
